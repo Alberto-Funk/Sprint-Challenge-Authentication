@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom'
 import Login from './Login';
+import Jokes from './Jokes';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,6 +15,7 @@ class App extends Component {
         </header>
 
         <Route path="/login" component={Login} />
+        <Route path="/jokes" component={Jokes} />
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class Login extends Component {
+class Register extends Component {
   state = {
     username: '',
     password: ''
@@ -10,12 +10,12 @@ class Login extends Component {
 
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value})
 
-  Login = e => {
+  Register = e => {
     e.preventDefault();
 
-    axios.post('http://localhost:3300/api/login', this.state)
+    axios.post('http://localhost:3300/api/register', this.state)
     .then(res => {
-      localStorage.setItem('jwt', res.data.token)
+      console.log(res.data)
     })
     .catch(err => {
       console.log(err)
@@ -27,7 +27,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.Login}>
+        <form onSubmit={this.Register}>
           <div>
             <label>Username</label>
             <input 
@@ -53,4 +53,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
